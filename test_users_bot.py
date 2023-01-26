@@ -6,9 +6,8 @@ from faker import Faker
 from telebot import TeleBot, types
 
 # TODO: вставить свой токен
-TOKEN = '5910136904:AAEKuaBKfMneJwBKoMw1RccBonIlzmisnEU'
+TOKEN = '5910136904:'
 bot = TeleBot(TOKEN, parse_mode='html')
-# утилита для генерации номеров кредитных карт
 # указываем язык - русский
 faker = Faker('ru_RU') 
 
@@ -27,7 +26,7 @@ main_menu_reply_markup.row(
 @bot.message_handler(commands=['start'])
 def start_message_handler(message: types.Message):
     # отправляем ответ на команду '/start'
-    # не забываем прикрепить объект клавиатуры к сообщению
+    # прикрепляю объект клавиатуры к сообщению
     bot.send_message(
         chat_id=message.chat.id,
         text="Привет👋\nЭто бот для генерации тестовых пользователей. "\
